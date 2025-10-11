@@ -1,5 +1,114 @@
+
+html {
+    font-size: 16px;
+}
 #app, body, html {
-    height: 100;
+    height: 100%;
     width: 100%;
     margin: 0;
+    background-color: var(--blue-100);
+    font-family: 'UbuntuRegular';
+}
+
+:root {
+  /* Primary Colors */
+  --blue-950: hsl(213, 96%, 18%);
+  --purple-600: hsl(243, 100%, 62%);
+  --blue-300: hsl(228, 100%, 84%);
+  --blue-200: hsl(206, 94%, 87%);
+  --red-500: hsl(354, 84%, 57%);
+
+  /* Neutral Colors */
+  --grey-500: hsl(231, 11%, 63%);
+  --purple-200: hsl(229, 24%, 87%);
+  --blue-100: hsl(218, 100%, 97%);
+  --blue-50: hsl(231, 100%, 99%);
+  --white: hsl(0, 100%, 100%);
+
+  /* Fonts */
+  
+}
+
+@font-face {
+    font-family: "UbuntuBold";
+    src: url(assets/fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family: "UbuntuMedium";
+    src: url(assets/fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: "UbuntuRegular";
+    src: url(assets/fonts/Ubuntu-Regular.ttf);
+}
+
+#app {
+    display: flex;
+}
+
+.formContainer {
+    padding: 1rem;
+    background-color: var(--white);
+    margin: auto;
+    margin-top: auto;
+    border-radius: 7px;
+}
+
+.formContainerLeftSide {
+    position: relative
+}
+
+.stepCardsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(30%);
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stepCard {
+    display: flex;
+    gap: 1rem;
+}
+
+.stepCardRightSide {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+.stepCardLeftSide {
+    display: flex;
+}
+.stepCircle {
+    height: 2em;
+    width: 2em;
+    border-radius: 500px;
+    border: 1px solid var(--white);
+    margin: auto;
+    position: relative;
+    
+}
+.stepName {
+    font-family: "UbuntuRegular";
+    color: var(--grey-500)
+}
+.stepText {
+    font-family: "UbuntuBold";
+    color: var(--white);
+}
+
+.textInStepCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "UbuntuBold";
+}
+.formContainerRightSide {
+    width: 60em
 }
