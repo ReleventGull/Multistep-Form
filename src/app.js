@@ -17,18 +17,11 @@ export const App = () => {
                 </div>
             </div>
             <div className="formContainerRightSide">
-                    
-                    <div className="formRightTop">
-
-                    </div>
-                    
-                    <div className="formRightContainer">
-
-                    </div>
-                   
-                    <div className="formRightBottom">
-
-                    </div>
+                    {
+                        currentStep == 1 ? 
+                        <StepOneForm setCurrentStep={setCurrentStep}/>
+                        : null
+                    }
             </div>
         </div>
     )
