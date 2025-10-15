@@ -53,7 +53,7 @@ html {
     background-color: var(--white);
     margin: auto;
     margin-top: auto;
-    border-radius: 7px;
+    border-radius: 9px;
     display: flex;
 }
 
@@ -143,13 +143,14 @@ html {
     flex-direction: column;
     gap: .5rem;
 }
+.secondTitle {
+    color: var(--grey-500)
+}
 .stepOneInputContainer {
     width: 100%;
     padding: .8em;
-    
-    border-radius: 7px;
+    border-radius: 9px;
     box-sizing: border-box;
-
 }
 .stepOneInputContainer input {
     outline: none;
@@ -182,7 +183,7 @@ html {
     color: var(--white);
     padding: 1rem;
     font-family: "UbuntuMedium";
-    border-radius: 7px;
+    border-radius: 9px;
     cursor: pointer;
 }
 .stepOneNextButton:hover {
@@ -194,4 +195,71 @@ html {
 .errorMessage {
     color: red;
     margin-left: auto;
+}
+
+.planCardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.planCardBox {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    border: 2px solid var(--purple-200);
+    padding: 1rem;
+    box-sizing: border;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.planCardTextBox {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.planCardTextBox h3 {
+    margin: 0;
+    color: var(--blue-950)
+}
+.planCardTextBox span {
+    color: var(--grey-500)
+}
+.planCardBox:hover {
+    border: 2px solid var(--purple-600)
+}
+.monthlyYearlyContainer {
+    border-radius: 9px;
+    margin-top: 2rem;
+    background-color: var(--blue-100);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.ballContainer {
+    padding: .5rem;
+    box-sizing: border-box;
+    width: 2.8rem;
+    height: 1.5rem;
+    border-radius: 50rem;
+    background-color: var(--blue-950);
+    position: relative;
+}
+.monthlyYearlyTitle {
+    font-family: "UbuntuBold";
+}
+.stepFormContainerBottom.two {
+    display: flex;
+}
+.stepFormContainerBottom span {
+    margin-right: auto;
+    margin-top: auto;
+    padding: 1rem;
+    color: var(--grey-500);
+    cursor: pointer;
+}
+.stepFormContainerBottom span:hover {
+    color: var(--blue-950)
 }

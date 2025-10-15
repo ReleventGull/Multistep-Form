@@ -31,7 +31,7 @@ export const StepOneForm = ({setCurrentStep}) => {
         <div className="stepFormContainer one">
             <div className="stepFormContainerTop one">
                 <h1>Personal Info</h1>
-                <span>Please provide your name, email adress, and phone number.</span>
+                <span className="secondTitle">Please provide your name, email adress, and phone number.</span>
             </div>
             <div className="stepFormContainerMiddle one">
                 <div className="stepOneForm">
