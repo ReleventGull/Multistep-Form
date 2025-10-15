@@ -1,12 +1,8 @@
 import { useState } from "react"
-export const StepOneForm = ({setCurrentStep}) => {
-    const [name, setName] = useState('')
-    const [emailAddress, setEmailAddres] = useState("")
-    const [phoneNumber, setPhoneNumber] = useState("")
+export const StepOneForm = ({setName, name, emailAddress, phoneNumber, setEmailAddres, setPhoneNumber, setCurrentStep}) => {
     const [nameError, setNameError] = useState("")
     const [emailError, setEmailError] = useState("")
     const [phoneNumberError, setPhoneNumberError] = useState("")
-    
     const handleSubmit = () => {
         let error = false
         if(!name) {
@@ -25,7 +21,6 @@ export const StepOneForm = ({setCurrentStep}) => {
             console.log("Advance");
             setCurrentStep(2)
         }
-
     }
     return (
         <div className="stepFormContainer one">
