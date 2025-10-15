@@ -30,7 +30,7 @@ export const StepTwoForm = ({setCurrentStep, selectedPlan, setSelectedPlan, curr
         transform: `translate(${currentBilling == 'monthly' ? `-90%` : `-10%`}, -50%)`,
     }
     const handleSubmit = () => {
-        console.log('DO SUFF');
+        setCurrentStep(3)
     }
     return (
         <div className="stepFormContainer two">
