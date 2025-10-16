@@ -333,6 +333,7 @@ html {
     color: var(--grey-500);;
     text-decoration: underline;
     font-family: "UbuntuMedium";
+    cursor: pointer;
 }
 .paymentBottom {
     display: flex;

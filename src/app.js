@@ -6,7 +6,7 @@ import { StepThreeForm } from "./StepThreeForm"
 import { StepFourForm } from "./StepFourForm"
 export const App = () => {
     const [steps, setSteps] = useState(["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"])
-    const [currentStep, setCurrentStep] = useState(3)
+    const [currentStep, setCurrentStep] = useState(4)
 
     //For step 1 state
     const [name, setName] = useState('')
