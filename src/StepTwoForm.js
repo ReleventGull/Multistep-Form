@@ -1,25 +1,8 @@
 import { useState } from "react"
 import { PlanCard } from "./PlanCard"
 
-export const StepTwoForm = ({setCurrentStep, selectedPlan, setSelectedPlan, currentBilling, setCurrentBillling}) => {
-    const [cards, setCards] = useState([
-        {
-            text: "Arcade",
-            price: "$9/mo",
-            img: 'assets/images/icon-arcade.svg'
-        },
-        {
-            text: "Advanced",
-            price: "$12/mo",
-            img: 'assets/images/icon-advanced.svg'
-        },
-            {
-            text: "Pro",
-            price: "$15/mo",
-            img: 'assets/images/icon-pro.svg'
-        }
+export const StepTwoForm = ({cards, setCurrentStep, selectedPlan, setSelectedPlan, currentBilling, setCurrentBillling}) => {
 
-    ])
     const ballStyle = {
         backgroundColor: 'var(--white)',
         padding: '.6rem',
@@ -42,7 +25,7 @@ export const StepTwoForm = ({setCurrentStep, selectedPlan, setSelectedPlan, curr
                 <div className="planCardContainer">
                     {
                         cards.map((item, index) => 
-                        <PlanCard selectedPlan={selectedPlan} index={index} setSelectedPlan={setSelectedPlan} text={item.text} price={item.price} img={item.img}/>
+                        <PlanCard currentBilling={currentBilling} selectedPlan={selectedPlan} index={index} setSelectedPlan={setSelectedPlan} text={item.text} priceYearly={item.priceYearly} priceMonthly={item.priceMonthly} img={item.img}/>
                         )
                     }
                 </div >

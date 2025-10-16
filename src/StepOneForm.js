@@ -18,7 +18,6 @@ export const StepOneForm = ({setName, name, emailAddress, phoneNumber, setEmailA
             error = true
         }
         if(!error) {
-            console.log("Advance");
             setCurrentStep(2)
         }
     }

@@ -1,24 +1,7 @@
 import { useState } from "react"
 import { AddOnCard } from "./AddOnCard"
-export const StepThreeForm = ({planOneSelected, planTwoSelected, planThreeSelected, currentBilling, setCurrentStep, setPlanTwoSelected, setPlanOneSelected, setPlanThreeSelected}) => {
-    const [addOns, setAddOns] = useState([
-        {
-            title: "Online service",
-            subTitle: "Access to multiplayer games",
-            price: `${currentBilling == 'monthly' ? '+$1/mo' : '+$10/yr'}`
-        },
-        {
-            title: "Larger Storage",
-            subTitle: "Extra 1TB of cloud save",
-            price: `${currentBilling == 'monthly' ? '+$2/mo' : '+$20/yr'}`
-        },
-                {
-            title: "Customizable profile",
-            subTitle: "Custom theme on your profile",
-            price: `${currentBilling == 'monthly' ? '+$2/mo' : '+$20/yr'}`
-        },
+export const StepThreeForm = ({addOns, planOneSelected, planTwoSelected, planThreeSelected, currentBilling, setCurrentStep, setPlanTwoSelected, setPlanOneSelected, setPlanThreeSelected}) => {
 
-    ])
     const handleSubmit = () => {
         setCurrentStep(4)
     }
@@ -31,7 +14,7 @@ export const StepThreeForm = ({planOneSelected, planTwoSelected, planThreeSelect
             <div className="stepFormContainerMiddle three">
                 {
                     addOns.map((item, index) => 
-                        <AddOnCard index={index} planOneSelected={planOneSelected} planTwoSelected={planTwoSelected} planThreeSelected={planThreeSelected} setPlanThreeSelected={setPlanThreeSelected} setPlanTwoSelected={setPlanTwoSelected} setPlanOneSelected={setPlanOneSelected}title={item.title} subTitle={item.subTitle} price={item.price}/>
+                        <AddOnCard currentBilling={currentBilling} index={index} planOneSelected={planOneSelected} planTwoSelected={planTwoSelected} planThreeSelected={planThreeSelected} setPlanThreeSelected={setPlanThreeSelected} setPlanTwoSelected={setPlanTwoSelected} setPlanOneSelected={setPlanOneSelected} title={item.title} subTitle={item.subTitle} priceYearly={item.priceYearly}priceMonthly={item.priceMonthly}/>
                     )
                 }
             </div>
