@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import{ PaymentCard } from './PaymentCard'
-export const StepFourForm = ({addOns, planThreeSelected, planOneSelected, planTwoSelected, currentBilling, cards, selectedPlan, setCurrentStep}) => {
+export const StepFourForm = ({setIsDone, addOns, planThreeSelected, planOneSelected, planTwoSelected, currentBilling, cards, selectedPlan, setCurrentStep}) => {
     const [newAddOns, setNewAddOns] = useState([])
     const [cost, setCost] = useState('')
+   
     const generateList = () => {
         addOns[0].selected = planOneSelected
         addOns[1].selected = planTwoSelected
@@ -34,6 +35,9 @@ export const StepFourForm = ({addOns, planThreeSelected, planOneSelected, planTw
         generateCost()
     }, [])
 
+    const handleSubmit = () => {
+        setIsDone(true)
+    }
 
     return (
         <div className="stepFormContainer four">

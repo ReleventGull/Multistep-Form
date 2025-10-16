@@ -4,9 +4,10 @@ import { StepOneForm } from "./StepOneForm"
 import { StepTwoForm } from "./StepTwoForm"
 import { StepThreeForm } from "./StepThreeForm"
 import { StepFourForm } from "./StepFourForm"
+import { StepFiveForm } from "./StepFiveForm"
 export const App = () => {
     const [steps, setSteps] = useState(["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"])
-    const [currentStep, setCurrentStep] = useState(4)
+    const [currentStep, setCurrentStep] = useState(1)
 
     //For step 1 state
     const [name, setName] = useState('')
@@ -61,6 +62,9 @@ export const App = () => {
     const [planOneSelected, setPlanOneSelected] = useState(false)
     const [planTwoSelected, setPlanTwoSelected] = useState(false)
     const [planThreeSelected, setPlanThreeSelected] = useState(false)
+    
+
+    const [isDone, setIsDone ] = useState(false)
     return(
         <div className="formContainer">
             <div className="formContainerLeftSide">
@@ -75,14 +79,16 @@ export const App = () => {
             </div>
             <div className="formContainerRightSide">
                     {
-                        currentStep == 1 ? 
+                        isDone ? 
+                        <StepFiveForm />
+                        : currentStep == 1 ? 
                         <StepOneForm setName={setName} setEmailAddres={setEmailAddres} setPhoneNumber={setPhoneNumber}   name={name} emailAddress={emailAddress} phoneNumber={phoneNumber}  setCurrentStep={setCurrentStep}/>
                         : currentStep == 2 ?
                         <StepTwoForm cards={cards} setCurrentStep={setCurrentStep} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setCurrentBillling={setCurrentBillling} currentBilling={currentBilling}/> 
                         : currentStep == 3 ?
                         < StepThreeForm addOns={addOns} planOneSelected={planOneSelected} planTwoSelected={planTwoSelected} planThreeSelected={planThreeSelected} setPlanThreeSelected={setPlanThreeSelected} setPlanTwoSelected={setPlanTwoSelected} setPlanOneSelected={setPlanOneSelected} setCurrentStep={setCurrentStep} currentBilling={currentBilling}/>
                         : currentStep == 4 ?
-                        <StepFourForm planOneSelected={planOneSelected} planTwoSelected={planTwoSelected} planThreeSelected={planThreeSelected} addOns={addOns} setCurrentStep={setCurrentStep} selectedPlan={selectedPlan} currentBilling={currentBilling} cards={cards}/>
+                        <StepFourForm setIsDone={setIsDone} planOneSelected={planOneSelected} planTwoSelected={planTwoSelected} planThreeSelected={planThreeSelected} addOns={addOns} setCurrentStep={setCurrentStep} selectedPlan={selectedPlan} currentBilling={currentBilling} cards={cards}/>
                         : null
                     }
             </div>
