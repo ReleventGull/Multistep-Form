@@ -1,6 +1,6 @@
 
 
-export const AddOnCard = ({index, planOneSelected, planTwoSelected, planThreeSelected, setPlanTwoSelected, setPlanOneSelected, setPlanThreeSelected, title, subTitle, price}) => {
+export const AddOnCard = ({currentBilling, index, planOneSelected, planTwoSelected, planThreeSelected, setPlanTwoSelected, setPlanOneSelected, setPlanThreeSelected, title, subTitle, priceMonthly, priceYearly}) => {
     const determineValue = () => {
         switch(index) {
             case 0: 
@@ -12,35 +12,22 @@ export const AddOnCard = ({index, planOneSelected, planTwoSelected, planThreeSel
         }
     }
     const handleChange = (e) => {
-        switch(index) {
-            case 0: 
-                if(e.target.value == "false") {
-                    setPlanOneSelected(true)
-                }else {
-                    setPlanOneSelected(false)
-                }
-                break
-             case 1: 
-                if(e.target.value == "false") {
-                    setPlanTwoSelected(true)
-                }else {
-                    setPlanTwoSelected(false)
-                }
-                break 
-            case 2: 
-                if(e.target.value == "false") {
-                    setPlanThreeSelected(true)
-                }else {
-                    setPlanThreeSelected(false)
-                }
-                break 
-           
+        switch (index) {
+            case 0:
+            setPlanOneSelected(e.target.checked);
+            break;
+            case 1:
+            setPlanTwoSelected(e.target.checked);
+            break;
+            case 2:
+            setPlanThreeSelected(e.target.checked);
+            break;
         }
     }
     return (
         <div className="addOnCard">
             <div className="addOneCardLeft">
-                <input value={determineValue()} onChange={(e) => handleChange(e)} type="checkbox" />
+                <input checked={determineValue()} onChange={(e) => handleChange(e)} type="checkbox" />
             </div>
             <div className="addOneCardMiddle">
                 <h4>{title}</h4>
@@ -48,7 +35,7 @@ export const AddOnCard = ({index, planOneSelected, planTwoSelected, planThreeSel
             </div>
 
             <div className="addOneCardRight">
-                <span>{price}</span>
+                <span>${currentBilling == "monthly" ? priceMonthly + '/mo' : priceYearly + '/yr'}</span>
             </div>
             
         </div>

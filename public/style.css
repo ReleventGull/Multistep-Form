@@ -308,3 +308,62 @@ html {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+.paymentList {
+    background-color: var(--blue-100);
+    border-radius: 9px;
+    padding: 1rem;
+}
+.paymentTop {
+    display: flex;
+    font-family: "UbuntuBold";
+    color: var(--blue-950);
+}
+.paymentTopRight {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.paymentTopLeft {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.paymentTopLeft span {
+    font-size: .8em;
+    color: var(--grey-500);;
+    text-decoration: underline;
+    font-family: "UbuntuMedium";
+}
+.paymentBottom {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+.paymentTopLeft h4 {
+    margin: 0;
+    color: var(--blue-950);
+}
+.paymentServiceContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.nameOfService {
+    color: var(--grey-500);
+}
+.serviceCost {
+    color: var(--blue-950)
+}
+.finalPaymentBox {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+.finalPaymentBox span {
+    color: var(--grey-500)
+}
+.finalPaymentBox h4 {
+    margin: 0;
+    color: var(--purple-600)
+}
