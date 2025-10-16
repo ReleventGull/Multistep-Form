@@ -47,7 +47,7 @@ export const StepFourForm = ({addOns, planThreeSelected, planOneSelected, planTw
                     <div className="paymentTop">
                         <div className="paymentTopLeft">
                             <h4>{cards[selectedPlan].text} ({currentBilling[0].toUpperCase() + currentBilling.slice(1)})</h4>
-                            <span>Change</span>
+                            <span onClick={() => setCurrentStep(2)}>Change</span>
                         </div>
                         
                         <div className="paymentTopRight">
